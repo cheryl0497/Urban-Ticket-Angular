@@ -1,0 +1,30 @@
+<header>
+    <div class="container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="../../assets/image/admin.jpg" class="img-admin profile-card-2">
+                </div>
+                <div class="col-md-8 admin-title">
+                    <h1 class="text-left">Welcome Admin</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- displays all movies  -->
+<div class="container">
+    <h1 class="text-center">Movies Running</h1>
+	<div class="row">
+		<div class="col-md-3" *ngFor= "let movie of movies">
+            <hr>
+            <div class="profile-card-2"><img src="{{movie.image}}" class="img img-responsive">
+                <div class="profile-name">{{movie.name}}</div>
+                
+                <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+            </div>
+        </div>
+
+        
+	</div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UrbanTicket</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="container movie-details">
+		<div class="row">
+			<div class="col-md-6 left-box">
+				<img class="img1" src="{{movie.image}}" alt="Image Not Found">
+			</div>
+			<div class="col-md-6">
+				<label>Movie Name <b>:</b></label>
+					<h5>{{movie.name}}</h5>
+				<label>Date <b>:</b></label>
+					<h5>{{movie.date}}</h5><br>
+				<label>Genre <b>:</b></label>
+					<h5>{{movie.genre}}</h5><br>
+				<label>Language <b>:</b></label>
+					<h5>{{movie.language}}</h5><br>
+					<button class="btn btn-success" (click)="onCreate()"> Book Now</button>   
+			</div>
+			<!-- <div class="col-md-6">
+				<label class="labelMname">Movie Name <b>:</b></label>
+					<h3 class="mname">{{movie.name}}</h3>
+				<label class="labelMdate">Date <b>:</b></label>
+					<h1 class="mdate">{{movie.date}}</h1><br>
+				<label class="labelMgenre">Genre <b>:</b></label>
+					<h1 class="mgenre">{{movie.genre}}</h1><br>
+				<label class="labelMlang">Language <b>:</b></label>
+					<h1 class="mlang">{{movie.language}}</h1><br>
+					<button class="btn btn-success" (click)="onCreate()"> Book Now</button>   
+			</div> -->
+		</div>
+	</div>
+
+	<div class="container md">
+		<h2 class="mabt">About the Movie<b>:</b></h2>
+		<p  class="desc">{{movie.description}}</p>
+	</div>
+    
+    <footer>
+        <p>Urban Ticket Web Application</p>
+        <p>Copyright 2021 - UrbanTicket</p>
+    </footer>
+</body>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&display=swap" rel="stylesheet">
+ <script type="text/javascript" src="../../assets/image/JQuery3.3.1.js"></script> 
+ <script type="text/javascript" src="../../assets/image/lightslider.js"></script>
+</head>
+
+<body>
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../assets/image/s-1.jpg" alt="MET">
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/image/s-2.jpg" alt="MET">
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/image/s-3.jpg" alt="MET">
+    </div>
+
+  </div>
+  
+  
+  <a class="carousel-control-prev" href="#" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+ <!--movies---------------------------->
+        <h2 class="RM">Running Movies</h2>
+         <!--box-8------------------------>
+         <div class="movies-box">
+            <!--img------------>
+            <!--movie name--------->
+            <div class="container movies">
+                <div class="row">
+                  <div class="col-4" *ngFor="let movie of movies">
+                        <a [routerLink]="['/moviepage', movie.id]">
+                            <img  class="mimage" src="{{movie.image}}" alt="Image Not Found">
+                        </a>
+                        <h3 class="Mname">{{movie.name}}</h3> 
+                  </div>
+                </div>
+              </div>
+        </div>
+
+    <footer>
+        <p>Going To Internet, Ltd Consumer Website</p>
+        <p>Copyright 2020 - GoingToInternet</p>
+    </footer>
+
+<script type="text/javascript">
+	 $(document).ready(function() {
+    $('#autoWidth,#autoWidth2').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+        } 
+    });  
+  });
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+.card{
+    margin-top: 5px;
+    max-width: 220px;
+}
+
+li.details{
+    line-height: 5px;
+}
+p.scroll {
+    width: 180px;
+    height: 110px;
+    overflow: auto;
+  }
+
+  .card-img-top{
+      max-height: 300px;
+      min-height: 300px;
+      
+      /* min-height: 492px; */
+  }
+
+  
+  body{
+    background-image: url('../../assets/image/joker.jpeg');
+    /* background-position:inherit; */
+    background-repeat: no-repeat;
+    /* background-attachment: relative; */
+    background-attachment: fixed;
+    overflow-y: hidden;
+    background-size: cover;
+    background-color: black;
+    /* height:100vw;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    border: 2px solid rgb(5, 5, 5); */
+  
+  }

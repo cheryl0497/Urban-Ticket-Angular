@@ -1,0 +1,156 @@
+<body>
+    <div class="col-md-12">
+        <div class="card card-container">
+          <h3 class="text-center">Add Movie</h3>
+            <form
+          *ngIf="!isSuccessful"
+          name="form"
+       
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate
+          autocomplete="off"
+          enctype="multipart/form-data"
+        >
+    
+          <!--movie name -->
+          <div class="form-group">
+           <b> <label for="name">Name</label></b>
+            <input
+             type="text"
+             placeholder="Enter Movie Name"
+             class="form-control"
+             name="mname"
+             [(ngModel)]="form.mname"
+             required
+             #mname="ngModel"
+             />
+             <div class="alert-danger" *ngIf="f.submitted && mname.invalid">
+               <div *ngIf="mname.errors.required">Name is required</div>
+             </div>
+          </div>
+          <!--movie description -->
+            <div class="form-group">
+              <b><label for="description">Description</label></b>
+              <textarea 
+                name="mdescription" 
+                cols="42" 
+                rows="5"
+                [(ngModel)]="form.mdescription"
+                required
+                minlength="10"
+                maxlength="300"
+                #mdescription="ngModel"
+              ></textarea> 
+              <div class="alert-danger" *ngIf="f.submitted && mdescription.invalid">
+                <div *ngIf="mdescription.errors.required">Description is required</div>
+                <div *ngIf="mdescription.errors.minlength">
+                 Description must be at least more than 10 characters
+                </div>
+                <div *ngIf="mdescription.errors.maxlength">
+                  Description must be at most 300 characters
+                </div>
+              </div>
+            </div>
+            <!-- movie language -->
+            <div class="form-group">
+              <b><label for="language">Language</label></b>
+              <select 
+                name="mlanguage" 
+                class="form-control"
+                [(ngModel)]="form.mlanguage"
+                required
+                #mlanguage="ngModel"
+                >
+                <option value="Hindi">Hindi</option>
+                <option value="English">English</option>
+                <option value="Marathi">Marathi</option>
+                <option value="Telugu">Telugu</option>
+                <option value="Tamil">Tamil</option>
+              </select>
+            </div>
+            <!-- genre -->
+            <div class="form-group">
+              <b><label for="genre">Genre</label></b>
+              <select 
+                name="mgenre" 
+                class="form-control"
+                [(ngModel)]="form.mgenre"
+                required
+                #mgenre="ngModel"
+                >
+                <option value="Action">Action</option>
+                <option value="Romance">Romance</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Animation">Animation</option>
+                <option value="Drama">Drama</option>
+              </select>
+            </div>
+            
+           <!-- date -->
+           <div class="form-group">
+            <b> <label for="date">Date</label></b>
+                <input 
+                    type="text" 
+                    onfocus="(this.type='date')"
+                    class="form-control"
+                    name="mdate" 
+                    [(ngModel)]="form.mdate"
+                    required
+                    #mdate ="ngModel"
+                    placeholder="Select date">
+                    <div class="alert-danger" *ngIf="f.submitted && mdate.invalid">
+                        <div *ngIf="mdate.errors.required">Date and Time Required</div>
+                    </div>
+           </div>
+           <!-- time -->
+           <div class="form-group">
+            <b><label for="time">Select a time</label></b>
+            <input type="text" 
+            placeholder="Select Time"
+            onfocus="(this.type='time')"
+             name="mtime"
+            class="form-control"
+            [(ngModel)]="form.mtime"
+            required
+            #mtime ="ngModel">
+           </div>
+           <!-- image -->
+           <div class="form-group">
+            <label for="image">Upload Movie Image</label>
+            <input 
+                id="file"
+                type="file" 
+                class="form-control-file" 
+                name="mimage"
+                [(ngModel)]="form.mimage"
+                required
+                #mimage ="ngModel"
+                (change)="onChange($event)"
+                >
+          </div>
+          <!--Flag variable is used here-->
+          <div class="container" *ngIf="loading"> 
+             <h3>Loading ...</h3> 
+          </div> 
+
+          <!-- sign up button -->
+          <div class="form-group">
+             <button class="btn btn-primary btn-block">Add Movie</button>
+           </div>
+          <!-- Registration Messages -->
+          <div class="alert alert-warning" *ngIf="f.submitted && isUploadFailed">
+              Upload failed!<br />{{ errorMessage }}
+          </div>
+          </form>
+      
+          <div class="alert alert-success" *ngIf="isSuccessful">
+            Movie added successfully.
+          </div>
+        </div>
+      </div>
+    </body>
+    

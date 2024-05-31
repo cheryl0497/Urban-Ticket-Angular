@@ -1,0 +1,39 @@
+<body>
+  <div class="container welcome">
+    <div>
+      <h1><u>Welcome Manager</u></h1>
+    </div>
+    <div>
+      <h3 class="text-center text-white"><u> Currently Scheduled Movies</u></h3>
+    </div>
+  </div>
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-md-3" *ngFor="let movie of movies">
+        
+          <div class="card" style="width: 18rem" >
+              <img src="{{movie.image}}" class="card-img-top" alt="Image not Found">
+              <div class="card-body">
+                <h5 class="card-title">{{movie.name}}</h5>
+                <!-- <p class="card-text scroll">{{movie.description}}</p> -->
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item details">{{movie.language}}</li>
+                <li class="list-group-item details">{{movie.genre}}</li>
+                <li class="list-group-item details">{{movie.time}}</li>
+              </ul>
+              <div class="card-body">
+                <button (click) = "updateMovieById(movie.id)" class="btn btn-outline-primary rounded-pill" style="margin-left: 10px;">Update</button>
+                <button (click) = "deleteMoviesById(movie.id)" class="btn btn-outline-danger rounded-pill" style="margin-left: 10px;">Delete</button>
+              </div>
+            </div>
+      
+      </div>
+    </div>
+</div>
+</body>
+
+
+
+
